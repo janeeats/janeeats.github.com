@@ -26,10 +26,10 @@ On the second time I watched it, I was really struck by the way Jiro spoke about
 
 From a career perspective, I knew that in order to elevate my work, I needed to be able to provide more than simple front end design. With HTML/CSS skills being almost a requirement nowadays for most web designers, eventually I would have to learn how to program.
 
-**I first heard about Ruby on Rails** from my oldest brother, [Theo](http://twitter.com/theevo "@theevo"), who is a huuuuge fan of [37signals](http://37signals.com/ "the coolest company"). I had been curious about learning Ruby on Rails for some time and that's what led me to find the [Flatiron School](http://flatironschool.com/ "Learn Ruby on Rails in NYC"). 
+**I first heard about Ruby on Rails** from my oldest brother, [Theo](http://twitter.com/theevo "@theevo"), who is a huuuuge fan of [37signals](http://37signals.com/ "the coolest company") (for those who don't know 37signals gave birth to Ruby on Rails). I had been curious about learning Ruby on Rails for some time and that's what led me to find the [Flatiron School](http://flatironschool.com/ "Learn Ruby on Rails in NYC"). 
 
 Lastly, I want to end with a **book recommendation: *Steal Like an Artist* by Austin Kleon.** I think the tagline, "10 Things Nobody Told You About Being Creative," sums it up well. I think a bit more accurate tagline is "10 Guidelines to Help You In Being Creative." The book is an excellent read.. but if you're on a tight budget, he's got a great [TED talk](http://www.youtube.com/watch?feature=player_embedded&v=oww7oB9rjgw "Austin Kleon TED Talk on Creative Work"). 
 
-**To anyone out there stuck in a rut,** Kleon's book really inspired me to outline concrete actions to start producing creative work again. It literally motivated me to clean everything on, inside, and around my desk (both physical and virtual). It movtivated me to make changes in the way I work to be more productive.
+**To anyone out there stuck in a rut,** Kleon's book really inspired me to outline concrete actions to start producing creative work again. It literally motivated me to clean everything on, inside, and around my desk (both physical and virtual). It motivated me to make changes in the way I work to be more productive.
 
 What have y'all found helpful for encouraging big life shifts?
