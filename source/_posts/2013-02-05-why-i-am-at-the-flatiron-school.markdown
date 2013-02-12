@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Why am I at the Flatiron School?"
+title: "Jiro Dreams of Sushi and Jane Dreams of Applications"
 date: 2013-02-05 17:22
 comments: true
-categories: [CSS3, Responsive, Media Queries]
+categories: [Flatiron School, Getting Out of a Rut, Jiro Dreams of Sushi, How to Steal Like an Artist]
 ---
 
-## Jiro Dreams of Sushi and Jane Dreams of Applications
+##Why am I at the Flatiron School?
 
 While I liked my old job as the Interactive Designer/Developer for the New York City Economic Development Corporation, I was ready for a change. I'm pretty sure if I had to design just one more email template or tweak one more WordPress theme, I was gonna go crazy. I fell out of love with design at my old job. Then I encountered two pieces of inspiration that helped me find my way...
 
 <!-- more -->
 
-**Jiro Dreams of Sushi.** It's on Netflix, so if you haven't seen it yet, I highly recommend you watch it or at least add it to your [instant queue] (http://movies.netflix.com/WiMovie/Jiro_Dreams_of_Sushi/70181716?locale=en-US "Jiro Dreams of Sushi on Netflix Streaming"). In case you haven't heard of it before, Jiro Dreams of Sushi is a documentary that follows Jiro, an 85-year-old master sushi chef in Japan and owner of Sukiyabashi Jiro, a Michelin three-star, 10-seat restaurant.
+**Jiro Dreams of Sushi.** It's on Netflix, so if you haven't seen it yet, I highly recommend you watch it or at least add it to your [instant queue](http://movies.netflix.com/WiMovie/Jiro_Dreams_of_Sushi/70181716?locale=en-US "Jiro Dreams of Sushi on Netflix Streaming"). In case you haven't heard of it before, Jiro Dreams of Sushi is a documentary that follows Jiro, an 85-year-old master sushi chef in Japan and owner of Sukiyabashi Jiro, a Michelin three-star, 10-seat restaurant.
 
 On the second time I watched it, I was really struck by the way Jiro spoke about his craft. He clearly loves his work and it drives him. He strives for perfection.
 
