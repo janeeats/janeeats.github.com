@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://janeeats.github.com
-title: @janeeats code
-subtitle: JV
+title: "@janeeats on code and design"
+subtitle: Howdy
 author: Jane Vora
 simple_search: http://google.com/search
 description:
@@ -85,12 +85,12 @@ pinboard_user:
 pinboard_count: 3
 
 # Delicious
-delicious_user:janeeats
+delicious_user: janeeats
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: janeeats
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
