@@ -28,8 +28,4 @@ I knew that in order to elevate my work, I needed to be able to provide more tha
 
 I first heard about Ruby on Rails from my brother, who is a huuuuge fan of 37signals. I had been curious about learning Ruby on Rails for some time and that's what led me to find the [Flatiron School](http://flatironschool.com/ "Learn Ruby on Rails in NYC"). 
 
-Lastly, I want to end with a book recommendation: *Steal Like an Artist* by Austin Kleon. I think the tagline, "10 Things Nobody Told You About Being Creative," sums it up well. I think a bit more accurate tagline is "10 Guidelines to Help You In Being Creative." The book is an excellent read.. but if you're on a tight budget, he's got a great [TED talk](http://www.youtube.com/watch?feature=player_embedded&v=oww7oB9rjgw "Austin Kleon TED Talk on Creative Work"). 
-
-Anyway, Austin Kleon offers some awesome, solid advice in this book. To anyone out there stuck in a rut, his book really helped me get inspired and outlined concrete actions I could take to start doing creative things again. It literally motivated me to clean everything on, inside, and around my desk and so I had a good space to start producing good work again. It movtivated me to make changes in the way I work.
-
-What sources of inspiration have y'all found helpful for making big life shifts?
+Lastly, I want to end with a book recommendation: *Steal Like an Artist* by Austin Kleon. I think the tagline, "10 Things Nobody Told You About Being Creative," sums it up well. I think a bit more accurate tagline is "10 Guidelines to Help You In Being Creative." The book is an excellent read.. but if you're on a tight budget, he's got a great [TED talk](http://www.youtube.com/watch?feature=player_embedded&v=oww7oB9rjgw "Austin Kleon TED Talk on Creative Work").
