@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-09T15:51:11-05:00</updated>
+  <updated>2013-03-09T16:38:25-05:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -12,6 +12,104 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Normalizing Data in Rails Forms for Beginners - Part 2]]></title>
+    <link href="http://janeeats.github.com/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/"/>
+    <updated>2013-03-09T15:53:00-05:00</updated>
+    <id>http://janeeats.github.com/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2</id>
+    <content type="html"><![CDATA[<p>This post, part two of two, explains some customizations I included in a basic form for creating and editing groups on my team's app, <a href="http://janeslunch.com">Jane's Lunch</a>. In my previous post, part one, I explain how I <a href="/blog/2013/03/09/rails-form-helpers-for-beginners/">installed a timepicker</a> for the groups form. In this post, I explain how I created a custom form helper to normalize the states input for user addresses.</p>
+
+<!-- more -->
+
+
+<p>Jane's Lunch is built on the <a href="https://hackfood.ordr.in/">Ordr.In API</a>, which requires the two-letter, state abbreviation for delivery addresses. To ensure that the data we received from the group form would be clean and play well with the Ordr.In API, I used a custom form helper that would normalize the states input for group addresses.</p>
+
+<p>I put the following code in the group helper file:</p>
+
+<pre><code>def us_states
+[
+  ['Alabama', 'AL'],
+  ['Alaska', 'AK'],
+  ['Arizona', 'AZ'],
+  ['Arkansas', 'AR'],
+  ['California', 'CA'],
+  ['Colorado', 'CO'],
+  ['Connecticut', 'CT'],
+  ['Delaware', 'DE'],
+  ['District of Columbia', 'DC'],
+  ['Florida', 'FL'],
+  ['Georgia', 'GA'],
+  ['Hawaii', 'HI'],
+  ['Idaho', 'ID'],
+  ['Illinois', 'IL'],
+  ['Indiana', 'IN'],
+  ['Iowa', 'IA'],
+  ['Kansas', 'KS'],
+  ['Kentucky', 'KY'],
+  ['Louisiana', 'LA'],
+  ['Maine', 'ME'],
+  ['Maryland', 'MD'],
+  ['Massachusetts', 'MA'],
+  ['Michigan', 'MI'],
+  ['Minnesota', 'MN'],
+  ['Mississippi', 'MS'],
+  ['Missouri', 'MO'],
+  ['Montana', 'MT'],
+  ['Nebraska', 'NE'],
+  ['Nevada', 'NV'],
+  ['New Hampshire', 'NH'],
+  ['New Jersey', 'NJ'],
+  ['New Mexico', 'NM'],
+  ['New York', 'NY'],
+  ['North Carolina', 'NC'],
+  ['North Dakota', 'ND'],
+  ['Ohio', 'OH'],
+  ['Oklahoma', 'OK'],
+  ['Oregon', 'OR'],
+  ['Pennsylvania', 'PA'],
+  ['Puerto Rico', 'PR'],
+  ['Rhode Island', 'RI'],
+  ['South Carolina', 'SC'],
+  ['South Dakota', 'SD'],
+  ['Tennessee', 'TN'],
+  ['Texas', 'TX'],
+  ['Utah', 'UT'],
+  ['Vermont', 'VT'],
+  ['Virginia', 'VA'],
+  ['Washington', 'WA'],
+  ['West Virginia', 'WV'],
+  ['Wisconsin', 'WI'],
+  ['Wyoming', 'WY']
+]
+end
+</code></pre>
+
+<p>My group helper file is located in janeslunch/app/helpers/group_helper.rb.</p>
+
+<p>Then in the view for the group form, I added this form helper to call the us_states helper:</p>
+
+<pre><code>&lt;%= f.label(:state) %&gt;
+&lt;%= f.select :state, us_states%&gt;
+</code></pre>
+
+<p>On the frontend, the states are spelled out in the input dropdown:
+<img src="/images/states-form-helper-frontend.jpg" title="States Form Helper Input Dropdown" alt="Form Helper Example " /></p>
+
+<p>In the database, the states data is saved in the format that the Ordr.in API likes:
+<img src="/images/states-form-helper-db.png" title="States Form Helper Helps us Normalize Data Inputs in our DB" alt="Form Helper Example " /></p>
+
+<p><strong>Resources</strong></p>
+
+<ul>
+<li>Help from StackOver flow for my <a href="http://stackoverflow.com/questions/6400010/rails-select-drop-down-for-states">states select tag</a></li>
+<li>If you need select tags for other geographic locations, check out this handy gem <a href="https://github.com/jim/carmen">Carmen</a> (and for <a href="https://github.com/jim/carmen-rails">rails</a>).</li>
+<li>Rails Guide for <a href="http://guides.rubyonrails.org/form_helpers.html">Form Helpers</a></li>
+<li>Listened to this <a href="https://soundcloud.com/charlotte-sky/sets/2013-remix">playlist</a> while writing this post.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Normalizing Data in Rails Forms for Beginners - Part 1]]></title>
@@ -68,19 +166,19 @@
 </code></pre>
 
 <p>Here's a breakdown to explain the block of code above:
-<img src="/images/timepicker-step1.png" title="Image call example" alt="Alt text" />
+<img src="/images/timepicker-step1.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 Make sure to use an id not a class for the input selector that timepicker calls. I initially made lunch_time another class for the input instead of an id and it did not work.</p>
 
-<p><img src="/images/timepicker-step2.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step2.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 I was wary of using an input form helper, so I just used regular HTML and mixed it in with the erb format. However, I wanted to make sure that my input name would be passed along with the rest of the group data in the params hash, so I used my browser inspector to check the name format for other inputs that used the rails form helpers. The names were set to 'group[attribute_name]' so that's the format I followed for the timepicker input.</p>
 
-<p><img src="/images/timepicker-step3.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step3.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 My timepicker() call would not work without the document.ready.</p>
 
-<p><img src="/images/timepicker-step4.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step4.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 I set the configurations for timepicker based on the <a href="http://jdewit.github.com/bootstrap-timepicker/">documentation</a>.</p>
 
-<p><img src="/images/timepicker-step5.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step5.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 The timepicker is a little buggy if you do not set a defaultTime. In some cases, the timepicker will show NaN:NaN if you don't have any defaultTime set.</p>
 
 <p>If the defaultTime, is only set to "12:00", then the timepicker will always show "12:00," even if the user has already set a lunch time.</p>

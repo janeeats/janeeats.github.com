@@ -10,7 +10,13 @@
     </url>
     <url>
         <loc>http://janeeats.github.com/blog/2013/03/09/rails-form-helpers-for-beginners/</loc>
-        <lastmod>2013-03-09T15:51:04-05:00</lastmod>
+        <lastmod>2013-03-09T16:34:39-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://janeeats.github.com/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/
+        </loc>
+        <lastmod>2013-03-09T16:38:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://janeeats.github.com/404.html</loc>
@@ -22,11 +28,11 @@
     </url>
     <url>
         <loc>http://janeeats.github.com/blog/archives/</loc>
-        <lastmod>2013-03-09T15:51:04-05:00</lastmod>
+        <lastmod>2013-03-09T16:38:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://janeeats.github.com/</loc>
-        <lastmod>2013-03-09T15:51:04-05:00</lastmod>
+        <lastmod>2013-03-09T16:38:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://janeeats.github.com/robots.txt</loc>

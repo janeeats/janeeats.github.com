@@ -140,19 +140,19 @@
 </code></pre>
 
 <p>Here&#8217;s a breakdown to explain the block of code above:
-<img src="/images/timepicker-step1.png" title="Image call example" alt="Alt text" />
+<img src="/images/timepicker-step1.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 Make sure to use an id not a class for the input selector that timepicker calls. I initially made lunch_time another class for the input instead of an id and it did not work.</p>
 
-<p><img src="/images/timepicker-step2.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step2.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 I was wary of using an input form helper, so I just used regular HTML and mixed it in with the erb format. However, I wanted to make sure that my input name would be passed along with the rest of the group data in the params hash, so I used my browser inspector to check the name format for other inputs that used the rails form helpers. The names were set to &#8216;group[attribute_name]&#8217; so that&#8217;s the format I followed for the timepicker input.</p>
 
-<p><img src="/images/timepicker-step3.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step3.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 My timepicker() call would not work without the document.ready.</p>
 
-<p><img src="/images/timepicker-step4.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step4.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 I set the configurations for timepicker based on the <a href="http://jdewit.github.com/bootstrap-timepicker/">documentation</a>.</p>
 
-<p><img src="/images/timepicker-step5.png" title="Image call example" alt="Alt text" />
+<p><img src="/images/timepicker-step5.png" title="Bootstrap Timepicker Code Implementation Example" alt="Timepicker Code " />
 The timepicker is a little buggy if you do not set a defaultTime. In some cases, the timepicker will show NaN:NaN if you don&#8217;t have any defaultTime set.</p>
 
 <p>If the defaultTime, is only set to &#8220;12:00&#8221;, then the timepicker will always show &#8220;12:00,&#8221; even if the user has already set a lunch time.</p>
@@ -215,6 +215,8 @@ The timepicker is a little buggy if you do not set a defaultTime. In some cases,
       
         <a class="basic-alignment left" href="/blog/2013/02/24/how-to-eat-an-elephant/" title="Previous Post: Jane Dreams of Programming">&laquo; Jane Dreams of Programming</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/" title="next Post: Normalizing Data in Rails Forms for Beginners - Part 2">Normalizing Data in Rails Forms for Beginners - Part 2 &raquo;</a>
       
     </p>
   </footer>
