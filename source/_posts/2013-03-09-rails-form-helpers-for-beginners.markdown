@@ -47,19 +47,19 @@ In the view for our group form, I added the following:
       </script> 
 
 Here's a breakdown to explain the block of code above:
-![Alt text](/images/timepicker-step1.png "Image call example")
+![Timepicker Code ](/images/timepicker-step1.png "Bootstrap Timepicker Code Implementation Example")
 Make sure to use an id not a class for the input selector that timepicker calls. I initially made lunch_time another class for the input instead of an id and it did not work.
 
-![Alt text](/images/timepicker-step2.png "Image call example")
+![Timepicker Code ](/images/timepicker-step2.png "Bootstrap Timepicker Code Implementation Example")
 I was wary of using an input form helper, so I just used regular HTML and mixed it in with the erb format. However, I wanted to make sure that my input name would be passed along with the rest of the group data in the params hash, so I used my browser inspector to check the name format for other inputs that used the rails form helpers. The names were set to 'group[attribute_name]' so that's the format I followed for the timepicker input.
 
-![Alt text](/images/timepicker-step3.png "Image call example")
+![Timepicker Code ](/images/timepicker-step3.png "Bootstrap Timepicker Code Implementation Example")
 My timepicker() call would not work without the document.ready.
 
-![Alt text](/images/timepicker-step4.png "Image call example")
+![Timepicker Code ](/images/timepicker-step4.png "Bootstrap Timepicker Code Implementation Example")
 I set the configurations for timepicker based on the [documentation](http://jdewit.github.com/bootstrap-timepicker/).
 
-![Alt text](/images/timepicker-step5.png "Image call example")
+![Timepicker Code ](/images/timepicker-step5.png "Bootstrap Timepicker Code Implementation Example")
 The timepicker is a little buggy if you do not set a defaultTime. In some cases, the timepicker will show NaN:NaN if you don't have any defaultTime set. 
 
 If the defaultTime, is only set to "12:00", then the timepicker will always show "12:00," even if the user has already set a lunch time. 
