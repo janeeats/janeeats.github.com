@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Form Helpers | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/form-helpers/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-09T15:49:18-05:00</updated>
+  <updated>2013-03-09T15:51:11-05:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>My Flatiron School team, <a href="http://twitter.com/ACrystalC">Crystal</a>, <a href="http://twitter.com/timspeaking">Tim</a> &amp; <a href="http://twitter.com/TylerMDavis">Tyler</a>, and I recently presented our group project, <a href="http://janeslunch.com">Jane's Lunch</a>, at a <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails MeetUp</a>. Jane's Lunch is a web application that makes lunch delivery for group orders easy and fun.</p>
 
 <p>I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I explain how I installed a timepicker for the group forms. In part two, I explain how I created a custom form helper to normalize the states input for user addresses.</p>
+
+<!-- more -->
+
 
 <h2>TimePicker</h2>
 
