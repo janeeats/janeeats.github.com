@@ -4,7 +4,7 @@
   <title><![CDATA[@janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-02-25T09:12:18-05:00</updated>
+  <updated>2013-03-09T15:49:18-05:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Normalizing Data in Rails Forms for Beginners - Part 1]]></title>
+    <link href="http://janeeats.github.com/blog/2013/03/09/rails-form-helpers-for-beginners/"/>
+    <updated>2013-03-09T13:23:00-05:00</updated>
+    <id>http://janeeats.github.com/blog/2013/03/09/rails-form-helpers-for-beginners</id>
+    <content type="html"><![CDATA[<p>My Flatiron School team, <a href="http://twitter.com/ACrystalC">Crystal</a>, <a href="http://twitter.com/timspeaking">Tim</a> &amp; <a href="http://twitter.com/TylerMDavis">Tyler</a>, and I recently presented our group project, <a href="http://janeslunch.com">Jane&#8217;s Lunch</a>, at a <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails MeetUp</a>. Jane&#8217;s Lunch is a web application that makes lunch delivery for group orders easy and fun.</p>
+
+<p>I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I explain how I installed a timepicker for the group forms. In part two, I explain how I created a custom form helper to normalize the states input for user addresses.</p>
+
+<h2>TimePicker</h2>
+
+<p>Our group form requires users to select a designated lunch time. We wanted to normalize the time data so that we wouldn&#8217;t have problems parsing different time formats (e.g. &#8220;1:30PM&#8221; vs. &#8220;1:30 p.m.&#8221; vs. &#8220;13:30&#8221;). A timepicker would solve this issue. I found <a href="http://jdewit.github.com/bootstrap-timepicker/">Bootstrap Timepicker</a>, a timepicker built by <a href="https://github.com/jdewit/bootstrap-timepicker">@jdewit</a> for use with Twitter Bootstrap.</p>
+
+<p>To install the gem, I added this line to our Gemfile:</p>
+
+<pre><code>gem 'bootstrap-timepicker-rails'
+</code></pre>
+
+<p>Next, I added this line to install the CSS for Bootstrap Timepicker:</p>
+
+<pre><code> *= require bootstrap-timepicker
+</code></pre>
+
+<p>Then, I added this line to link to the JavaScript file for Bootstrap Timepicker:</p>
+
+<pre><code>//= require bootstrap-timepicker
+</code></pre>
+
+<p>For beginners, you&#8217;ll want to include the entire line if you are installing the css and javascript. The code looks commented out, but Rails will actually implement that code even though it&#8217;s commented out.</p>
+
+<p>In the view for our group form, I added the following:</p>
+
+<pre><code>&lt;%= f.label(:lunch_time) %&gt;
+  &lt;div class='input-append bootstrap-timepicker' style='display: inline;'&gt;
+    &lt;input id='lunch_time' class='input-small' type='text' name='group[lunch_time]'&gt;
+    &lt;span class='add-on'&gt;&lt;i class='icon-time'&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;script type="text/javascript"&gt;
+  $(document).ready(function(){
+    $('#lunch_time').timepicker({
+      template: 'dropdown',
+      minuteStep: 15,
+      showMeridian: false,
+      showSeconds: false,
+      defaultTime: '&lt;%= @group.lunch_time || "12:00" %&gt;'
+    });
+  });
+  &lt;/script&gt; 
+</code></pre>
+
+<p>Here&#8217;s a breakdown to explain the block of code above:
+<img src="http://janeeats.github.com/images/timepicker-step1.png" title="Image call example" alt="Alt text" />
+Make sure to use an id not a class for the input selector that timepicker calls. I initially made lunch_time another class for the input instead of an id and it did not work.</p>
+
+<p><img src="http://janeeats.github.com/images/timepicker-step2.png" title="Image call example" alt="Alt text" />
+I was wary of using an input form helper, so I just used regular HTML and mixed it in with the erb format. However, I wanted to make sure that my input name would be passed along with the rest of the group data in the params hash, so I used my browser inspector to check the name format for other inputs that used the rails form helpers. The names were set to &#8216;group[attribute_name]&#8217; so that&#8217;s the format I followed for the timepicker input.</p>
+
+<p><img src="http://janeeats.github.com/images/timepicker-step3.png" title="Image call example" alt="Alt text" />
+My timepicker() call would not work without the document.ready.</p>
+
+<p><img src="http://janeeats.github.com/images/timepicker-step4.png" title="Image call example" alt="Alt text" />
+I set the configurations for timepicker based on the <a href="http://jdewit.github.com/bootstrap-timepicker/">documentation</a>.</p>
+
+<p><img src="http://janeeats.github.com/images/timepicker-step5.png" title="Image call example" alt="Alt text" />
+The timepicker is a little buggy if you do not set a defaultTime. In some cases, the timepicker will show NaN:NaN if you don&#8217;t have any defaultTime set.</p>
+
+<p>If the defaultTime, is only set to &#8220;12:00&#8221;, then the timepicker will always show &#8220;12:00,&#8221; even if the user has already set a lunch time.</p>
+
+<p>The code fix above lets us set the timepicker to show the lunch time previously specified by the user or to show &#8220;12:00&#8221; if the user has not yet set it.</p>
+
+<p><strong>Resources Links</strong></p>
+
+<ul>
+<li><a href="http://jdewit.github.com/bootstrap-timepicker/">Bootstrap Timepicker</a>: A TimePicker built for use with Twitter Bootstrap</li>
+<li><a href="https://github.com/tispratik/bootstrap-timepicker-rails">Gem</a> for integrating Bootstrap Timepicker with Rails asset pipeline</li>
+<li>Rails Guide for <a href="http://guides.rubyonrails.org/form_helpers.html">Form Helpers</a></li>
+<li>I listened to this <a href="https://soundcloud.com/strangemachinemusic/sets/cool-2013">Playlist</a> while writing this blog post.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jane Dreams of Programming]]></title>
