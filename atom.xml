@@ -4,7 +4,7 @@
   <title><![CDATA[@janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-09T16:38:25-05:00</updated>
+  <updated>2013-03-23T17:25:37-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -204,19 +204,21 @@ The timepicker is a little buggy if you do not set a defaultTime. In some cases,
     <id>http://janeeats.github.com/blog/2013/02/24/how-to-eat-an-elephant</id>
     <content type="html"><![CDATA[<h2>How Programming Is Changing The Way I View Everything</h2>
 
-<p>Lately, I&#8217;ve been dreaming of programming. In my dreams, I&#8217;m breaking down problems, speaking of them in terms of coding metaphors. It reminds me of my dreams in Chinese while I studied abroad in Beijing my junion year of college. Living in China changed how I saw everything&#8230; for example I will never, ever take Modern Plumbing for granted again. I wanted to share two observations on how learning Ruby these 3 past weeks has already profoundly changed me.</p>
+<p>Lately, I&#8217;ve been dreaming of programming. In my dreams, I&#8217;m breaking down problems, explaining them in metaphors. It reminds me of my dreams in Chinese while I studied abroad in Beijing my junion year of college. Living in China changed how I saw everything&#8230; for example I will never, ever take Modern Plumbing for granted again.</p>
+
+<p>In this post, I share two observations on how learning Ruby these 3 past weeks has already profoundly changed the way I think.</p>
 
 <!-- more -->
 
 
 <p><strong>How Do You Eat an Elephant? One Bite at a Time.</strong>
-I recently had a skype session with my business partner. We&#8217;ve been trying to launch a business for the past year or so. We&#8217;ve hit so many road blocks. Learning to program really highlighted for me the source of our problems. We were trying to bite off more than we could chew. Instead of trying to solve one problem at a time, we were trying to solve 20 simultaneously. It&#8217;s easier to start off simply and then build up into something more complex.</p>
+I recently had a skype session with my business partner. We&#8217;ve been trying to launch a business for the past year or so. We&#8217;ve hit so many road blocks. Learning to program really highlighted for me the source of our problems. We were trying to bite off more than we could chew. Instead of trying to solve one problem at a time, we were trying to solve 20 simultaneously. We came back from the drawing board with a simple idea, broken down into small, manageable bites.</p>
 
 <p><strong>Embrace the Frustration.</strong>
-Programming is challenging, rewarding, and at time extremely frustrating. Being frustrated is part of the process. I&#8217;m not going to master everything in Ruby right away. I am learning to be comfortable with the idea that every line of code I&#8217;m testing will not pass on the first try. If programming was just that easy then wouldn&#8217;t be so rewarding learning it.</p>
+Programming is challenging, rewarding, and at times extremely frustrating. Being frustrated is part of the process. I&#8217;m not going to master everything in Ruby immediately. Every line of code I&#8217;m testing will not pass on the first try. I am learning to be comfortable with my frustration. When I see an error, I&#8217;m trying to catch myself from internally screaming, &#8220;Why the fuck does this not work?!&#8221; to responding with &#8220;Yes! An error! I can fix that.&#8221;</p>
 
 <p><strong>Use Your Broken-Ass Skills Constantly To Become Fluent.</strong>
-In the same way I learned Chinese by living and studying in Beijing, the Flatiron School is truly an immersive way to learn programming - just dive in and try to use the little code you know as often as possible. The language will start to feel more fluent the more you use it. I need to remind myself constantly that it&#8217;s ok to just use my broken ass Ruby and that eventually it will be come <a href="http://eloquentruby.com/">eloquent Ruby</a>&#8230; once I finish that book and put it into practice.</p>
+In the same way I learned Chinese by living and studying in Beijing, the Flatiron School is truly an immersive way to learn programming - just dive in and try to use the little code you know as often as possible. The language will start to feel more fluent the more you use it. I need to remind myself constantly that it&#8217;s ok to just use my broken ass Ruby and that eventually it will become <a href="http://eloquentruby.com/">eloquent Ruby</a>&#8230;</p>
 ]]></content>
   </entry>
   
