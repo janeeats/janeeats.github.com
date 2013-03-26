@@ -4,7 +4,7 @@
   <title><![CDATA[@janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T19:53:04-04:00</updated>
+  <updated>2013-03-26T19:57:01-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -95,7 +95,7 @@ end
 <ul>
 <li>Ryan Bates wrote an awesome authorization gem for Ruby on Rails called <a href="https://github.com/ryanb/cancan">CanCan</a></li>
 <li>RailsCast on how to implement <a href="http://railscasts.com/episodes/192-authorization-with-cancan">Authorization using CanCan</a></li>
-<li>Listened to this <a href="https://soundcloud.com/diplo/diplo-friends-bbcr1xtra-march">mixtape by Diplo</a> for his Diplo &amp; Friends radio show on BBC 1xtra. It&#8217;s good.</li>
+<li>While writing this post, I listened to this <a href="https://soundcloud.com/diplo/diplo-friends-bbcr1xtra-march">mixtape by Diplo</a> from the Diplo &amp; Friends radio show on BBC 1xtra. It&#8217;s good.</li>
 </ul>
 
 ]]></content>
