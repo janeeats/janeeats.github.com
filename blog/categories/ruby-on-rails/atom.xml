@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T17:34:35-04:00</updated>
+  <updated>2013-03-26T19:34:16-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -18,7 +18,74 @@
     <link href="http://janeeats.github.com/blog/2013/03/23/authorization-basics-in-rails/"/>
     <updated>2013-03-23T17:27:00-04:00</updated>
     <id>http://janeeats.github.com/blog/2013/03/23/authorization-basics-in-rails</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>My new Flatiron School team, Anthony, Ei-lene, Eugene, and I are working on HandRaise, an application to handle student questions during lab or working sessions. HandRaise will help us keep track of which student questions are up next for teachers to answer. In this post, I explain how we implemented some basic authorization to allow or restrict specific users in taking certain actions.</p>
+
+<p>Before we assigned user permissions, we first implemented authentication so that users may sign in and sign out of the application. We followed the RailsCast tutorial, <a href="http://railscasts.com/episodes/250-authentication-from-scratch-revised">Authentication from Scratch</a>.</p>
+
+<p>Once we had authentication running, we defined user roles. In our User model, we defined users roles as admins and students.</p>
+
+<pre><code>class User &lt; ActiveRecord::Base
+  attr_accessible :role
+
+  USER_ROLES = {
+    :admin =&gt; 0,
+    :student =&gt; 10
+  }
+</code></pre>
+
+<p>Then we wrote instance methods in our User model that allowed us to define which users were admins and students.</p>
+
+<pre><code>def set_as_admin 
+  self.role = USER_ROLES[:admin]
+end
+
+def set_as_student 
+  self.role = USER_ROLES[:student]
+end
+</code></pre>
+
+<p>Next, we created methods to check if a user can edit the issue, destroy the issue, or mark the issue as resolved. We knew we wanted our authorization methods to read like English so that the other team members would be able to easily understand what is happening in the code. We wanted the following methods to work:</p>
+
+<pre><code>def can_edit?(issue)
+  true if owns?(issue) || admin?
+end
+
+def can_destroy?(issue)
+  true if owns?(issue) || admin?
+end
+
+def can_resolve?(issue)
+  true if owns?(issue) || admin?
+end
+</code></pre>
+
+<p>In order for the methods above to work, we had to create the methods admin? and owns?(issue). The admin? method checks if the user is an admin. The owns?(issue) method let's us pass an issue as an argument to see if the user created it.</p>
+
+<pre><code>def owns?(issue)
+  true if self.id == issue.user_id
+end
+
+def admin?
+  true if self.role_name == :admin
+end
+
+def role_name
+  User.user_roles.key(self.role)
+end
+
+def self.user_roles
+  USER_ROLES
+end
+</code></pre>
+
+<p>After testing in the console to make sure our new methods worked, we added them to our view. The links to edit, resolve, or delete issues are only shown to users that are authorized to access those actions. Below is an example of how we used our new authorization methods in the view to check if a user has the ability to edit an issue:</p>
+
+<pre><code>&lt;% if @current_user.can_edit?(issue) %&gt;
+&lt;%= link_to 'Edit', edit_issue_path(issue) %&gt;
+&lt;% end %&gt;
+</code></pre>
+
+<p>Our next steps</p>
 ]]></content>
   </entry>
   
