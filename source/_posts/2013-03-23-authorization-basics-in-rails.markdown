@@ -76,4 +76,4 @@ After testing in the console to make sure our new methods worked, we added them 
 
 - Ryan Bates wrote an awesome authorization gem for Ruby on Rails called [CanCan](https://github.com/ryanb/cancan)
 - RailsCast on how to implement [Authorization using CanCan](http://railscasts.com/episodes/192-authorization-with-cancan)
-- Listened to this [mixtape by Diplo](https://soundcloud.com/diplo/diplo-friends-bbcr1xtra-march) for his Diplo & Friends radio show on BBC 1xtra. It's good.
+- While writing this post, I listened to this [mixtape by Diplo](https://soundcloud.com/diplo/diplo-friends-bbcr1xtra-march) from the Diplo & Friends radio show on BBC 1xtra. It's good.
