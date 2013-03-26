@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Form Helpers | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/form-helpers/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T19:50:42-04:00</updated>
+  <updated>2013-03-26T19:53:04-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -101,7 +101,7 @@ end
 <p>In the database, the states data is saved in the format that the Ordr.in API likes:
 <img src="/images/states-form-helper-db.png" title="States Form Helper Helps us Normalize Data Inputs in our DB" alt="Form Helper Example " /></p>
 
-<p><strong>Resources</strong></p>
+<p><strong>Resources:</strong></p>
 
 <ul>
 <li>Help from StackOver flow for my <a href="http://stackoverflow.com/questions/6400010/rails-select-drop-down-for-states">states select tag</a></li>
@@ -187,7 +187,7 @@ The timepicker is a little buggy if you do not set a defaultTime. In some cases,
 
 <p>The code fix above lets us set the timepicker to show the lunch time previously specified by the user or to show "12:00" if the user has not yet set it.</p>
 
-<p><strong>Resources Links</strong></p>
+<p><strong>Resources:</strong></p>
 
 <ul>
 <li><a href="http://jdewit.github.com/bootstrap-timepicker/">Bootstrap Timepicker</a>: A TimePicker built for use with Twitter Bootstrap</li>
