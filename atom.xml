@@ -4,7 +4,7 @@
   <title><![CDATA[@janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T17:26:17-04:00</updated>
+  <updated>2013-03-26T17:33:41-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -127,9 +127,9 @@ end
     <link href="http://janeeats.github.com/blog/2013/03/09/rails-form-helpers-for-beginners/"/>
     <updated>2013-03-09T13:23:00-05:00</updated>
     <id>http://janeeats.github.com/blog/2013/03/09/rails-form-helpers-for-beginners</id>
-    <content type="html"><![CDATA[<p>My Flatiron School team, <a href="http://twitter.com/ACrystalC">Crystal</a>, <a href="http://twitter.com/timspeaking">Tim</a> &amp; <a href="http://twitter.com/TylerMDavis">Tyler</a>, and I recently presented our group project, <a href="http://janeslunch.com">Jane&#8217;s Lunch</a>, at a <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails MeetUp</a>. Jane&#8217;s Lunch is a web application that makes lunch delivery for group orders easy and fun.</p>
+    <content type="html"><![CDATA[<p>My Flatiron School team, <a href="http://twitter.com/ACrystalC">Crystal</a>, <a href="http://twitter.com/timspeaking">Tim</a> &amp; <a href="http://twitter.com/TylerMDavis">Tyler</a>, and I recently presented our group project, Jane&#8217;s Lunch, at a <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails MeetUp</a>. Jane&#8217;s Lunch is a web application that makes lunch delivery for group orders easy and fun.</p>
 
-<p>I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I explain how I installed a timepicker for the group forms. In part two, I explain how I created a custom form helper to normalize the states input for user addresses.</p>
+<p>I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I&#8217;m explaining how I installed a timepicker for the group forms. In <a href="http://janeeats.github.com/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/">part two</a>, I&#8217;ll explain how I created a custom form helper to normalize the states input for user addresses.</p>
 
 <!-- more -->
 
