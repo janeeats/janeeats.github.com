@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Form Helpers | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/form-helpers/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-23T17:26:27-04:00</updated>
+  <updated>2013-03-26T17:25:20-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -25,7 +25,7 @@
 
 <p>Jane's Lunch is built on the <a href="https://hackfood.ordr.in/">Ordr.In API</a>, which requires the two-letter, state abbreviation for delivery addresses. To ensure that the data we received from the group form would be clean and play well with the Ordr.In API, I used a custom form helper that would normalize the states input for group addresses.</p>
 
-<p>I put the following code in the group helper file:</p>
+<p>I put the following code in the Group helper file:</p>
 
 <pre><code>def us_states
 [
@@ -85,13 +85,15 @@
 end
 </code></pre>
 
-<p>My group helper file is located in janeslunch/app/helpers/group_helper.rb.</p>
+<p>My Group helper file is located in janeslunch/app/helpers/group_helper.rb. This helper method should actually be moved to the Application helper file so that it may be used throughout this US states helper method may be used throughout the application.</p>
 
 <p>Then in the view for the group form, I added this form helper to call the us_states helper:</p>
 
 <pre><code>&lt;%= f.label(:state) %&gt;
 &lt;%= f.select :state, us_states%&gt;
 </code></pre>
+
+<p>In the select helper tag above, I'm passing the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.</p>
 
 <p>On the frontend, the states are spelled out in the input dropdown:
 <img src="/images/states-form-helper-frontend.jpg" title="States Form Helper Input Dropdown" alt="Form Helper Example " /></p>
