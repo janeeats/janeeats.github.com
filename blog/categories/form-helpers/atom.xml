@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Form Helpers | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/form-helpers/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T17:25:20-04:00</updated>
+  <updated>2013-03-26T17:26:17-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -93,7 +93,7 @@ end
 &lt;%= f.select :state, us_states%&gt;
 </code></pre>
 
-<p>In the select helper tag above, I'm passing the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.</p>
+<p>In the select helper tag above, I'm passing in, as an argument, the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.</p>
 
 <p>On the frontend, the states are spelled out in the input dropdown:
 <img src="/images/states-form-helper-frontend.jpg" title="States Form Helper Input Dropdown" alt="Form Helper Example " /></p>

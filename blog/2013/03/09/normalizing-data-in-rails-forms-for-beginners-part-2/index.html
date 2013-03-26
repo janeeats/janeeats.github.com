@@ -165,7 +165,7 @@ end
 &lt;%= f.select :state, us_states%&gt;
 </code></pre>
 
-<p>In the select helper tag above, I&#8217;m passing the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.</p>
+<p>In the select helper tag above, I&#8217;m passing in, as an argument, the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.</p>
 
 <p>On the frontend, the states are spelled out in the input dropdown:
 <img src="/images/states-form-helper-frontend.jpg" title="States Form Helper Input Dropdown" alt="Form Helper Example " /></p>
