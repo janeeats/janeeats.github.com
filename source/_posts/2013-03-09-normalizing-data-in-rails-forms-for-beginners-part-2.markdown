@@ -6,13 +6,13 @@ comments: true
 categories: [Form Helpers, Ruby, Rails] 
 ---
 
-This post, part two of two, explains some customizations I included in a basic form for creating and editing groups on my team's app, [Jane's Lunch](http://janeslunch.com). In my previous post, part one, I explain how I [installed a timepicker](/blog/2013/03/09/rails-form-helpers-for-beginners/) for the groups form. In this post, I explain how I created a custom form helper to normalize the states input for user addresses.
+This post, part two of two, explains some customizations I included in a basic form for creating and editing groups on my team's app, Jane's Lunch. In my previous post, part one, I explained how I [installed a timepicker](/blog/2013/03/09/rails-form-helpers-for-beginners/) for the groups form. In this post, I explain how I created a custom form helper to normalize the states input for user addresses.
 
 <!-- more -->
 
 Jane's Lunch is built on the [Ordr.In API](https://hackfood.ordr.in/), which requires the two-letter, state abbreviation for delivery addresses. To ensure that the data we received from the group form would be clean and play well with the Ordr.In API, I used a custom form helper that would normalize the states input for group addresses. 
 
-I put the following code in the group helper file:
+I put the following code in the Group helper file:
     def us_states
     [
       ['Alabama', 'AL'],
@@ -70,11 +70,13 @@ I put the following code in the group helper file:
     ]
     end
 
-My group helper file is located in janeslunch/app/helpers/group_helper.rb.
+My Group helper file is located in janeslunch/app/helpers/group_helper.rb. This helper method should actually be moved to the Application helper file so that it may be used throughout this US states helper method may be used throughout the application.
 
 Then in the view for the group form, I added this form helper to call the us_states helper:
     <%= f.label(:state) %>
     <%= f.select :state, us_states%>
+
+In the select helper tag above, I'm passing in, as an argument, the us_states Group helper method, which returns the array of all the states and their abbreviations. The array of states gets passed to the select helper tag as the options for the state select field.
 
 On the frontend, the states are spelled out in the input dropdown:
 ![Form Helper Example ](/images/states-form-helper-frontend.jpg "States Form Helper Input Dropdown")
@@ -82,7 +84,7 @@ On the frontend, the states are spelled out in the input dropdown:
 In the database, the states data is saved in the format that the Ordr.in API likes:
 ![Form Helper Example ](/images/states-form-helper-db.png "States Form Helper Helps us Normalize Data Inputs in our DB")
 
-**Resources**
+**Resources:**
 
 + Help from StackOver flow for my [states select tag](http://stackoverflow.com/questions/6400010/rails-select-drop-down-for-states)
 + If you need select tags for other geographic locations, check out this handy gem [Carmen](https://github.com/jim/carmen) (and for [rails](https://github.com/jim/carmen-rails)).

@@ -6,9 +6,9 @@ comments: true
 categories: [Ruby, Rails, Form Helpers]
 ---
 
-My Flatiron School team, [Crystal](http://twitter.com/ACrystalC), [Tim](http://twitter.com/timspeaking) & [Tyler](http://twitter.com/TylerMDavis), and I recently presented our group project, [Jane's Lunch](http://janeslunch.com), at a [NYC on Rails MeetUp](http://www.meetup.com/nyc-on-rails/). Jane's Lunch is a web application that makes lunch delivery for group orders easy and fun.
+My Flatiron School team, [Crystal](http://twitter.com/ACrystalC), [Tim](http://twitter.com/timspeaking) & [Tyler](http://twitter.com/TylerMDavis), and I recently presented our group project, Jane's Lunch, at a [NYC on Rails MeetUp](http://www.meetup.com/nyc-on-rails/). Jane's Lunch is a web application that makes lunch delivery for group orders easy and fun.
 
-I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I explain how I installed a timepicker for the group forms. In part two, I explain how I created a custom form helper to normalize the states input for user addresses.
+I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I'm explaining how I installed a timepicker for the group forms. In [part two](/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/), I'll explain how I created a custom form helper to normalize the states input for user addresses.
 
 <!-- more -->
 
@@ -66,7 +66,7 @@ If the defaultTime, is only set to "12:00", then the timepicker will always show
 
 The code fix above lets us set the timepicker to show the lunch time previously specified by the user or to show "12:00" if the user has not yet set it.
 
-**Resources Links**
+**Resources:**
 
 + [Bootstrap Timepicker](http://jdewit.github.com/bootstrap-timepicker/): A TimePicker built for use with Twitter Bootstrap
 + [Gem](https://github.com/tispratik/bootstrap-timepicker-rails) for integrating Bootstrap Timepicker with Rails asset pipeline
