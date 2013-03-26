@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T19:39:08-04:00</updated>
+  <updated>2013-03-26T19:50:42-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -23,9 +23,9 @@
 <!-- more -->
 
 
-<p>Before we assigned user permissions, we first implemented authentication so that users may sign in and sign out of the application. We followed the RailsCast tutorial, <a href="http://railscasts.com/episodes/250-authentication-from-scratch-revised">Authentication from Scratch</a>.</p>
+<p><strong>Authentication.</strong> Before we assigned user permissions, we first implemented authentication so that users may sign in and sign out of the application. We followed the RailsCast tutorial, <a href="http://railscasts.com/episodes/250-authentication-from-scratch-revised">Authentication from Scratch</a>.</p>
 
-<p>Once we had authentication running, we defined user roles. In our User model, we defined users roles as admins and students.</p>
+<p><strong>Defining Permissions</strong> Once we had authentication running, we defined user roles. In our User model, we defined users roles as admins and students.</p>
 
 <pre><code>class User &lt; ActiveRecord::Base
   attr_accessible :role
@@ -47,7 +47,7 @@ def set_as_student
 end
 </code></pre>
 
-<p>Next, we created methods to check if a user can edit the issue, destroy the issue, or mark the issue as resolved. We knew we wanted our authorization methods to read like English so that the other team members would be able to easily understand what is happening in the code. We wanted the following methods to work:</p>
+<p><strong>Authorization</strong> Next, we created methods to check if a user can edit the issue, destroy the issue, or mark the issue as resolved. We knew we wanted our authorization methods to read like English so that the other team members would be able to easily understand what is happening in the code. We wanted the following methods to work:</p>
 
 <pre><code>def can_edit?(issue)
   true if owns?(issue) || admin?
@@ -88,7 +88,16 @@ end
 &lt;% end %&gt;
 </code></pre>
 
-<p>Our next steps</p>
+<p><strong>Next Steps</strong> As you can see, we have some repetition in our authorization methods. The conditions for the can_edit?, can_resolve?, and can_delete? are all the same. Our next steps will include refactoring this code so we keep it dry.</p>
+
+<p><strong>Resources</strong></p>
+
+<ul>
+<li>Ryan Bates wrote an awesome authorization gem for Ruby on Rails called <a href="https://github.com/ryanb/cancan">CanCan</a></li>
+<li>RailsCast on how to implement <a href="http://railscasts.com/episodes/192-authorization-with-cancan">Authorization using CanCan</a></li>
+<li>Listened to this <a href="https://soundcloud.com/diplo/diplo-friends-bbcr1xtra-march">mixtape by Diplo</a> for his Diplo &amp; Friends radio show on BBC 1xtra. It's good.</li>
+</ul>
+
 ]]></content>
   </entry>
   
