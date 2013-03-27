@@ -6,7 +6,7 @@ comments: true
 categories: [Ruby, Rails, Form Helpers]
 ---
 
-My Flatiron School team, [Crystal](http://twitter.com/ACrystalC), [Tim](http://twitter.com/timspeaking) & [Tyler](http://twitter.com/TylerMDavis), and I recently presented our group project, Jane's Lunch, at a [NYC on Rails MeetUp](http://www.meetup.com/nyc-on-rails/). Jane's Lunch is a web application that makes lunch delivery for group orders easy and fun.
+My Flatiron School team, Crystal, Tim and Tyler, and I recently presented our group project, Jane's Lunch, at a [NYC on Rails MeetUp](http://www.meetup.com/nyc-on-rails/). Jane's Lunch is a web application that makes lunch delivery for group orders easy and fun.
 
 I worked on a small piece of our Groups controller and some of the basic forms for creating and editing groups. This post is part one of two. In part one, I'm explaining how I installed a timepicker for the group forms. In [part two](/blog/2013/03/09/normalizing-data-in-rails-forms-for-beginners-part-2/), I'll explain how I created a custom form helper to normalize the states input for user addresses.
 
