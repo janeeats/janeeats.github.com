@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Flatiron School | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-03-26T20:00:38-04:00</updated>
+  <updated>2013-04-22T12:54:10-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -12,6 +12,119 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Arrays vs. Linked Lists]]></title>
+    <link href="http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists/"/>
+    <updated>2013-04-22T12:27:00-04:00</updated>
+    <id>http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists</id>
+    <content type="html"><![CDATA[<p>Today at Flatiron School we started researching common Computer Science questions we might be asked during interviews. A common topic is the difference between Arrays and Linked Lists. I've used arrays lots of times in coding, but I had no idea what a linked list is. Below is a summary about what the differences between the two and their common use cases.</p>
+
+<p>Both Arrays and Linked Lists are used to store linear data of similar types. Depending on your application or requirement, you may elect to pick one over the other.</p>
+
+<!-- more -->
+
+
+<h2>Arrays</h2>
+
+<p><strong>What's an Array?</strong></p>
+
+<ul>
+<li>Typically arrays are denoted in bracket notation.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums = [10, 27, 12]
+fav_colors = ["yellow", "red", "orange", "green"]
+</code></pre>
+
+<ul>
+<li>Array size is allocated when it's declared.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums.size # =&gt; returns 3
+fav_colors.size # =&gt; returns 4
+</code></pre>
+
+<p><strong>Advantages:</strong></p>
+
+<ul>
+<li>A common use case for arrays is frequent searching.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums[0] # =&gt; returns 10
+fav_colors[3] # =&gt; returns "green"
+</code></pre>
+
+<p><strong>Disadvantages:</strong></p>
+
+<ul>
+<li>Array size is often fixed and specified at compile time. If you allocate arrays large in size in anticipation of data needs, you're allocating arrays with wasted space and may potentially crash.</li>
+<li>Inserting new elements or deleting existing elements at the front of an array is potentially expensive because existing elements need to be shifted or unshifted to make room.</li>
+<li>If you have trouble remembering the difference between shift and unshift... just take out the f and think about what they do. Got that handy tip from stackoverflow!</li>
+</ul>
+
+
+<h2>Linked Lists</h2>
+
+<p><strong>What's a Linked List?</strong></p>
+
+<ul>
+<li>The structure of Linked Lists consist of nodes. Think of nodes like the links in a chain.</li>
+<li>Each node contains 2 fields: a data field (the actual stored value) and reference field (which points to which element is next aka the "link").</li>
+<li>The references or pointers in nodes are what connect all of the nodes together.</li>
+</ul>
+
+
+<p><strong>Pros:</strong></p>
+
+<ul>
+<li>Linked Lists may be sized dynamically. If your application requires dynamically sized lists, you'll want to use a Linked List.</li>
+<li>Use Linked Lists if your application requires frequent insertion or deletion of elements at a specific location.</li>
+</ul>
+
+
+<p><strong>Why?</strong></p>
+
+<ul>
+<li>Memory is allocated differently for Linked Lists than Arrays.</li>
+<li>Arrays lump one block of memory for all of its elements.</li>
+<li>Linked Lists allocate space for each element separately in its own block of memory called a "node" or a "linked list element."</li>
+</ul>
+
+
+<p><strong>What else?</strong></p>
+
+<ul>
+<li>It's easier to store data of different sizes in a linked list. An array assumes every element is exactly the same size.</li>
+<li>As you mentioned, it's easier for a linked list to grow organically. An array's size needs to be known ahead of time, or re-created when it needs to grow.</li>
+<li>Shuffling a linked list is just a matter of changing what points to what. Shuffling an array is more complicated and/or takes more memory.</li>
+<li>As long as your iterations all happen in a "foreach" context, you don't lose any performance in iteration.</li>
+</ul>
+
+
+<p><strong>Resources:</strong></p>
+
+<ul>
+<li>Super detailed explanation of <a href="http://cslibrary.stanford.edu/103/LinkedListBasics.pdf">Linked Lists by the CS department at Stanford</a></li>
+<li>Good ole <a href="http://en.wikipedia.org/wiki/Linked_list">Wikipedia's Linked List entry</a></li>
+<li>Ruby doesn't have Linked Lists. Hashes are similar to Linked Lists in that they have references (keys) and values, but they're not the same. Here's how someone wrote <a href="http://khakimov.com/blog/2012/05/11/back-to-school-linked-list-with-ruby/">a Linked List in Ruby</a>.</li>
+<li>Listened to <a href="http://prettymuchamazing.com/music/stream/solange-true-ep">Solange's True EP</a> and the new <a href="http://www.youtube.com/watch?v=5NV6Rdv1a3I">Daft Punk "Get Lucky" track</a> while writing this blog post</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jane Dreams of Programming]]></title>

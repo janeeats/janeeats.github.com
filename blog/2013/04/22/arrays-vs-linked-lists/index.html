@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Arrays vs. Linked Lists - @janeeats on code and design</title>
+  <meta name="author" content="Jane Vora">
+
+  
+  <meta name="description" content="Today at Flatiron School we started researching common Computer Science questions we might be asked during interviews. A common topic is the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists">
+  <link href="/favicon.ico" rel="icon">
+  
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="@janeeats on code and design" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><hgroup>
+  <h1>@janeeats on code and design</h1>
+  
+    <h2><a href="/">Howdy</a></h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation">
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:janeeats.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Arrays vs. Linked Lists</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-22T12:27:00-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Today at Flatiron School we started researching common Computer Science questions we might be asked during interviews. A common topic is the difference between Arrays and Linked Lists. I&#8217;ve used arrays lots of times in coding, but I had no idea what a linked list is. Below is a summary about what the differences between the two and their common use cases.</p>
+
+<p>Both Arrays and Linked Lists are used to store linear data of similar types. Depending on your application or requirement, you may elect to pick one over the other.</p>
+
+<!-- more -->
+
+
+<h2>Arrays</h2>
+
+<p><strong>What&#8217;s an Array?</strong></p>
+
+<ul>
+<li>Typically arrays are denoted in bracket notation.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums = [10, 27, 12]
+fav_colors = ["yellow", "red", "orange", "green"]
+</code></pre>
+
+<ul>
+<li>Array size is allocated when it&#8217;s declared.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums.size # =&gt; returns 3
+fav_colors.size # =&gt; returns 4
+</code></pre>
+
+<p><strong>Advantages:</strong></p>
+
+<ul>
+<li>A common use case for arrays is frequent searching.</li>
+</ul>
+
+
+<!-- code example -->
+
+
+<pre><code>fav_nums[0] # =&gt; returns 10
+fav_colors[3] # =&gt; returns "green"
+</code></pre>
+
+<p><strong>Disadvantages:</strong></p>
+
+<ul>
+<li>Array size is often fixed and specified at compile time. If you allocate arrays large in size in anticipation of data needs, you&#8217;re allocating arrays with wasted space and may potentially crash.</li>
+<li>Inserting new elements or deleting existing elements at the front of an array is potentially expensive because existing elements need to be shifted or unshifted to make room.</li>
+<li>If you have trouble remembering the difference between shift and unshift&#8230; just take out the f and think about what they do. Got that handy tip from stackoverflow!</li>
+</ul>
+
+
+<h2>Linked Lists</h2>
+
+<p><strong>What&#8217;s a Linked List?</strong></p>
+
+<ul>
+<li>The structure of Linked Lists consist of nodes. Think of nodes like the links in a chain.</li>
+<li>Each node contains 2 fields: a data field (the actual stored value) and reference field (which points to which element is next aka the &#8220;link&#8221;).</li>
+<li>The references or pointers in nodes are what connect all of the nodes together.</li>
+</ul>
+
+
+<p><strong>Pros:</strong></p>
+
+<ul>
+<li>Linked Lists may be sized dynamically. If your application requires dynamically sized lists, you&#8217;ll want to use a Linked List.</li>
+<li>Use Linked Lists if your application requires frequent insertion or deletion of elements at a specific location.</li>
+</ul>
+
+
+<p><strong>Why?</strong></p>
+
+<ul>
+<li>Memory is allocated differently for Linked Lists than Arrays.</li>
+<li>Arrays lump one block of memory for all of its elements.</li>
+<li>Linked Lists allocate space for each element separately in its own block of memory called a &#8220;node&#8221; or a &#8220;linked list element.&#8221;</li>
+</ul>
+
+
+<p><strong>What else?</strong></p>
+
+<ul>
+<li>It&#8217;s easier to store data of different sizes in a linked list. An array assumes every element is exactly the same size.</li>
+<li>As you mentioned, it&#8217;s easier for a linked list to grow organically. An array&#8217;s size needs to be known ahead of time, or re-created when it needs to grow.</li>
+<li>Shuffling a linked list is just a matter of changing what points to what. Shuffling an array is more complicated and/or takes more memory.</li>
+<li>As long as your iterations all happen in a &#8220;foreach&#8221; context, you don&#8217;t lose any performance in iteration.</li>
+</ul>
+
+
+<p><strong>Resources:</strong></p>
+
+<ul>
+<li>Super detailed explanation of <a href="http://cslibrary.stanford.edu/103/LinkedListBasics.pdf">Linked Lists by the CS department at Stanford</a></li>
+<li>Good ole <a href="http://en.wikipedia.org/wiki/Linked_list">Wikipedia&#8217;s Linked List entry</a></li>
+<li>Ruby doesn&#8217;t have Linked Lists. Hashes are similar to Linked Lists in that they have references (keys) and values, but they&#8217;re not the same. Here&#8217;s how someone wrote <a href="http://khakimov.com/blog/2012/05/11/back-to-school-linked-list-with-ruby/">a Linked List in Ruby</a>.</li>
+<li>Listened to <a href="http://prettymuchamazing.com/music/stream/solange-true-ep">Solange&#8217;s True EP</a> and the new <a href="http://www.youtube.com/watch?v=5NV6Rdv1a3I">Daft Punk &#8220;Get Lucky&#8221; track</a> while writing this blog post</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="/about" title="About the author (Jane Vora)" rel="author">Jane Vora</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-22T12:27:00-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/arrays/'>Arrays</a>, <a class='category' href='/blog/categories/flatiron-school/'>Flatiron School</a>, <a class='category' href='/blog/categories/interview-prep/'>Interview Prep</a>, <a class='category' href='/blog/categories/linked-lists/'>Linked Lists</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists/" data-via="janeeats" data-counturl="http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/23/authorization-basics-in-rails/" title="Previous Post: Authorization Basics in Rails">&laquo; Authorization Basics in Rails</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jane Vora -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'janeeats';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists/';
+        var disqus_url = 'http://janeeats.github.com/blog/2013/04/22/arrays-vs-linked-lists/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
