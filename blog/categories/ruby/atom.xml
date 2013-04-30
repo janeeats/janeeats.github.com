@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-04-22T13:03:29-04:00</updated>
+  <updated>2013-04-29T23:40:31-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Notes on Chapters 1 to 3 of POODIR]]></title>
+    <link href="http://janeeats.github.com/blog/2013/04/29/notes-on-chapters-1-to-3-of-poodir/"/>
+    <updated>2013-04-29T23:39:00-04:00</updated>
+    <id>http://janeeats.github.com/blog/2013/04/29/notes-on-chapters-1-to-3-of-poodir</id>
+    <content type="html"><![CDATA[<p>Since Flatiron School is over, I'm committing myself to reading a new programming book each week and blogging about the important key points from each chapter. I've decided to start with <a href="https://twitter.com/sandimetz">Sandi Metz</a>'s book, <a href="http://www.amazon.com/Sandi-Metz/e/B0097WWH62">Practical Object-Oriented Design in Ruby</a>. When Avi started his lectures on Object Orientation, he showed us this <a href="http://www.confreaks.com/videos/240-goruco2009-solid-object-oriented-design">video of Sandi Metz's awesome presentation</a> at the GuRoKu conference. POODIR goes further in depth with code examples of the object oriented design principles she refers to in the video. Below are my takeaways for POODIR chapters 1 &amp; 2.</p>
+
+<h2>Chap 1: OOD</h2>
+
+<p><strong>What is Design?</strong></p>
+
+<ul>
+<li>Design: how you arrange code.</li>
+<li>Design your applications to be flexible because eventually specs or requirements will change.</li>
+<li>"Arranging code to efficiently accomodate change is a matter of design."</li>
+</ul>
+
+
+<h2>Chap 2: Desinging Classes with a Single Responsibility</h2>
+
+<p><strong>How to tell if a class has a single responsibility?</strong></p>
+
+<ul>
+<li>Rephrase every class method as a question - and see if that question makes sense. e.g. "Please Mr. Gear, what is your tire size?" does not make sense. Why should gears be responsible for details about tires?</li>
+<li>Describe each class in one sentence. If your sentence has the word "and," then the class probably has more than one responsibility. If your sentence includes the word "or," then the class probably has unrelated responsibilities.</li>
+<li>Cohesion: descriptor for single responsibility concept (e.g. "Highly cohesive" classes have a single responsibility.)</li>
+</ul>
+
+
+<p><strong>Coding Techniques that Embrace Change</strong></p>
+
+<p><em>Isolate Data and Data Structures</em></p>
+
+<ul>
+<li>Objects contain Data and Behavior.</li>
+<li>"Behavior is captured in methods and invoked by sending messages.""</li>
+<li>Define behavior once. When it changes, you only have to change it in once place.</li>
+<li>Bottom Line: Hide Data away. For example, use attribute readers instead of instance variables (referenced all over your application) so that you reference methods (defined once). If the Data changes, you just have to edit it once versus all over your app where you've used the instance variable.</li>
+<li>Also hide Data Structures away through methods that isolate messy structural information and keep your code DRY.</li>
+</ul>
+
+
+<p><em>Single Responsibility Everything</em></p>
+
+<ul>
+<li>Major Takeaway: Methods should also have a single responsibility.</li>
+<li>"[Refactorings of methods from multiple to single responsibility] are needed, not become the design is clear, but because it isn't. You do not have to know where you're going to use good design practices to get there. Good practices reveal design."</li>
+<li>Single Responsibility Methods: expose previously hidden qualities, avoid the need for comments, encourage reuse, and are easy to move to other classes.</li>
+<li>Separate responsibilities into different classes. "Concentrate on the primary class. If you identify extra responsibilities that you cannot yet remove, isolate them."</li>
+</ul>
+
+
+<h2>Chap 3: Managing Dependencies</h2>
+
+<p><strong>What are Dependencies?</strong></p>
+
+<ul>
+<li>You know if your class has dependencies if you see another class name in it (e.g. another class name, name of methods sent to other classes other than self, arguments of those methods, or order of those arguments).</li>
+<li>Classes that are tightly coupled together are more likely to cause problems when you need to make a changes. A change in an object creates changes in another dependent object. When you test one object, you'll likely be testing the other object simultaneously.</li>
+<li>Agh: Dependncies are especially destructive when chained (e.g. Class A knows things about Class B, which knows things about Class C).</li>
+</ul>
+
+
+<p><strong>How to Decouple Code and Reduce Dependencies</strong></p>
+
+<ul>
+<li>Dependency Injection allows us to reorgnize code so that classes don't have any explicit dependencies on other classes.</li>
+<li>Isolate instance creation so that you explicitily expose the dependency</li>
+<li>Isolate references to classes other than self (e.g. make a new method that makes the external call)</li>
+<li>Let methods take in a hash of arguments rather than a specific fixed-order</li>
+<li>Pattern: few fixed-order arguments followed by an options hash</li>
+<li>Cool Tip: To define default values of arguments of boolean values, instead of using || method, try fetch method or merging a defaults hash.</li>
+<li>Use a Wrapper so you DRY out the creation of instances that require you make calls to external interfaces</li>
+</ul>
+
+
+<p><strong>Dependency Direction</strong></p>
+
+<ul>
+<li>Depend on objects that are less likely to changes as often as self</li>
+<li>Depend on abstraction rather than concretion because abstraction is more stable</li>
+<li>"Depend on things that change less often than you do"</li>
+</ul>
+
+
+<p><strong>Follow Up Links:</strong></p>
+
+<ul>
+<li>In Chapter 2, Metz mentions the <a href="http://ruby-doc.org/core-1.9.3/Struct.html">Struct Ruby class</a> when discussing how to isolate responsibilities in a model when you're not yet ready to separate a responsibility into an entirely new model. Structs are described as a solution for when you need a "lightweight object."</li>
+<li>While writing this post, I listened to this super awesome <a href="https://soundcloud.com/urban_stylz_blog/diplo-friends-ryan-hemsworth">mix by Ryan Hemsworth for Diplo &amp; Friends</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arrays vs. Linked Lists]]></title>
