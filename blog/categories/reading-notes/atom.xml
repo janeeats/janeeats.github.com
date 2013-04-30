@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Reading Notes | @janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/blog/categories/reading-notes/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-04-29T23:40:31-04:00</updated>
+  <updated>2013-04-29T23:41:17-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-04-29T23:39:00-04:00</updated>
     <id>http://janeeats.github.com/blog/2013/04/29/notes-on-chapters-1-to-3-of-poodir</id>
     <content type="html"><![CDATA[<p>Since Flatiron School is over, I'm committing myself to reading a new programming book each week and blogging about the important key points from each chapter. I've decided to start with <a href="https://twitter.com/sandimetz">Sandi Metz</a>'s book, <a href="http://www.amazon.com/Sandi-Metz/e/B0097WWH62">Practical Object-Oriented Design in Ruby</a>. When Avi started his lectures on Object Orientation, he showed us this <a href="http://www.confreaks.com/videos/240-goruco2009-solid-object-oriented-design">video of Sandi Metz's awesome presentation</a> at the GuRoKu conference. POODIR goes further in depth with code examples of the object oriented design principles she refers to in the video. Below are my takeaways for POODIR chapters 1 &amp; 2.</p>
+
+<!-- more -->
+
 
 <h2>Chap 1: OOD</h2>
 
