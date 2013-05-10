@@ -4,7 +4,7 @@
   <title><![CDATA[@janeeats on code and design]]></title>
   <link href="http://janeeats.github.com/atom.xml" rel="self"/>
   <link href="http://janeeats.github.com/"/>
-  <updated>2013-04-29T23:41:17-04:00</updated>
+  <updated>2013-05-10T02:00:28-04:00</updated>
   <id>http://janeeats.github.com/</id>
   <author>
     <name><![CDATA[Jane Vora]]></name>
@@ -14,16 +14,25 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Notes on Chapters 1 to 3 of POODIR]]></title>
+    <title type="html"><![CDATA[Book Review: Practical Object-Oriented Design in Ruby (POODIR)]]></title>
     <link href="http://janeeats.github.com/blog/2013/04/29/notes-on-chapters-1-to-3-of-poodir/"/>
     <updated>2013-04-29T23:39:00-04:00</updated>
     <id>http://janeeats.github.com/blog/2013/04/29/notes-on-chapters-1-to-3-of-poodir</id>
-    <content type="html"><![CDATA[<p>Since Flatiron School is over, I&#8217;m committing myself to reading a new programming book each week and blogging about the important key points from each chapter. I&#8217;ve decided to start with <a href="https://twitter.com/sandimetz">Sandi Metz</a>&#8217;s book, <a href="http://www.amazon.com/Sandi-Metz/e/B0097WWH62">Practical Object-Oriented Design in Ruby</a>. When Avi started his lectures on Object Orientation, he showed us this <a href="http://www.confreaks.com/videos/240-goruco2009-solid-object-oriented-design">video of Sandi Metz&#8217;s awesome presentation</a> at the GuRoKu conference. POODIR goes further in depth with code examples of the object oriented design principles she refers to in the video. Below are my takeaways for POODIR chapters 1 &amp; 2.</p>
+    <content type="html"><![CDATA[<p>Since Flatiron School is over, I&#8217;m committing myself to reading a new programming book each week and blogging about the important key points from each chapter. I&#8217;ve decided to start with Practical Object-Oriented Design in Ruby (POODIR) by <a href="https://twitter.com/sandimetz">Sandi Metz</a>. Reading POODIR helped clarify and reinforce programming concepts:</p>
+
+<ul>
+<li>What is object orientation?</li>
+<li>What should go in a class?</li>
+<li>Design patterns and practices that allow code to change easily</li>
+<li>What does it mean when objects know too much about each other? (And why that is bad!)</li>
+<li>How to write reuseable code (think: duck typing, modules, superclasses, inheritance)</li>
+</ul>
+
 
 <!-- more -->
 
 
-<h2>Chap 1: OOD</h2>
+<h2>Object-Oriented Design</h2>
 
 <p><strong>What is Design?</strong></p>
 
@@ -34,12 +43,25 @@
 </ul>
 
 
-<h2>Chap 2: Desinging Classes with a Single Responsibility</h2>
-
-<p><strong>How to tell if a class has a single responsibility?</strong></p>
+<p><strong>What is Object Orientation?</strong></p>
 
 <ul>
-<li>Rephrase every class method as a question - and see if that question makes sense. e.g. &#8220;Please Mr. Gear, what is your tire size?&#8221; does not make sense. Why should gears be responsible for details about tires?</li>
+<li>Object-oriented programs consist of &#8220;objects and the messages that pass between them.&#8221;</li>
+<li>All objects have certain types of behavior, which are defined in methods.</li>
+<li>Methods are invoked by messages.</li>
+<li>Objects can also store data (think strings, arrays, hashes) using variables.</li>
+<li>Object attributes are defined by variables.</li>
+<li>Classes are the blueprint for certain types of objects. For example, the Fizzbuzz class contains all the details of behaviors of fizzbuzz objects, so that when new instances of fizzbuzz are created, they use the same methods but may have different attributes.</li>
+</ul>
+
+
+<h2>Desinging Classes (and Methods) with a Single Responsibility</h2>
+
+<p><strong>What goes in a class?</strong></p>
+
+<ul>
+<li>Classes should have a single responsibility because classes that have more than one responsibility are difficult to reuse.</li>
+<li>To figure out whether a particular method ought to go in a certain class, rephrase that method as a question and see if that question makes sense. For example, should gear objects be responsible for details about a tire&#8217;s size? No,</li>
 <li>Describe each class in one sentence. If your sentence has the word &#8220;and,&#8221; then the class probably has more than one responsibility. If your sentence includes the word &#8220;or,&#8221; then the class probably has unrelated responsibilities.</li>
 <li>Cohesion: descriptor for single responsibility concept (e.g. &#8220;Highly cohesive&#8221; classes have a single responsibility.)</li>
 </ul>
@@ -68,9 +90,9 @@
 </ul>
 
 
-<h2>Chap 3: Managing Dependencies</h2>
+<h2>Managing Dependencies</h2>
 
-<p><strong>What are Dependencies?</strong></p>
+<p><strong>How to tell when objects know too much about each other?</strong></p>
 
 <ul>
 <li>You know if your class has dependencies if you see another class name in it (e.g. another class name, name of methods sent to other classes other than self, arguments of those methods, or order of those arguments).</li>
@@ -82,7 +104,7 @@
 <p><strong>How to Decouple Code and Reduce Dependencies</strong></p>
 
 <ul>
-<li>Dependency Injection allows us to reorgnize code so that classes don&#8217;t have any explicit dependencies on other classes.</li>
+<li>Dependency Injection allows us to reorgnize code so that classes don&#8217;t have any explicit dependencies on other classes. In other words, objects can talk to each other without knowing what they do.</li>
 <li>Isolate instance creation so that you explicitily expose the dependency</li>
 <li>Isolate references to classes other than self (e.g. make a new method that makes the external call)</li>
 <li>Let methods take in a hash of arguments rather than a specific fixed-order</li>
@@ -101,10 +123,61 @@
 </ul>
 
 
+<h2>Creating Flexible Interfaces</h2>
+
+<p><strong>What vs. How</strong>
+- Think of methods as messages being sent between objects. The messages should speak to the &#8220;what&#8221; and not &#8220;how&#8221; of what the objects want.
+- Objects should know as little as possible about how other objects are responding to messages. That way if an object changes, it&#8217;s less likely to cause changes for other dependent objects.
+- Messages between objects should reflect &#8220;I know what I want from you and I trust you to give me that.&#8221;</p>
+
+<h2>Duck Typing</h2>
+
+<ul>
+<li>Duck typing allows you to define ojects by what they do instead of by what they are.</li>
+<li>&#8220;Duck types are public interfaces that are not tied to any specific class.&#8221; In other words, &#8220;ducks are virtual types that are defined by what they do instead of by who they are.&#8221;</li>
+<li>Duck typing allows your code to be more flexible and easier to maintain/change.</li>
+<li>Avoid code that expresses &#8220;I know who you are and because of that I know what you do.&#8221; When you see If/Else Statements or Case Statements that rely on knowing what types of objects it&#8217;s speaking to, you know you have an opportunity for abstraction. Examine the code&#8217;s expectations to find the duck type.</li>
+<li>Metz&#8217;s code example really helps illustrate <a href="https://github.com/skmetz/poodr/blob/master/chapter_5.rb">duck types</a></li>
+</ul>
+
+
+<h2>Inheritance &amp; Modules</h2>
+
+<p><strong>Abstracting Behavior to Superclasses, Defining Concretions in Subclasses</strong></p>
+
+<ul>
+<li>&#8220;Subclasses are specializations of their superclasses.&#8221; You probably wouldn&#8217;t design a superclass that only has one subclass.</li>
+<li>Promote abstract behavior. Promoting means taking behavior from subclasses and moving them up to superclasses because other subclasses share that behavior.</li>
+<li>Promotion failures have low consequences (the worst that can happen is you fail to find the abstraction).</li>
+<li>Demotion failures can have sever and widespread consequences (like breaking dependencies).</li>
+<li>General Refactoring Rule: Arrange code so you can promote abstractions and not demote concretions.</li>
+</ul>
+
+
+<p><strong>Template Method Pattern</strong>
+- Template Method allows you to &#8220;define a basic structure in the superclass and send messages to acquire subclass-specific contributions.&#8221; (good example of template method implemented on pg. 126)
+- &#8220;Always document template method requirements by implementing matching methods that raise useful errors.&#8221; (<a href="https://github.com/skmetz/poodr/blob/master/chapter_6.rb">good example</a> of how to implement matching method that raises useful error)
+- &#8220;Hook methods allow subclasses to contribute specializations without knowing the abstract algorithm. They reduce coupling between layers of hierarchy and increase its tolerance for change.&#8221;</p>
+
+<p><strong>Modules</strong></p>
+
+<ul>
+<li>Modules are used when different objects share common behavior</li>
+<li>Think of modules as defining shared roles among objects (versus superclasses which are like a genus and subclasses which are like species)</li>
+<li>Behaviors defined in modules can be added to any object, classes, instances of classes, or other modules</li>
+<li>Methods from modules and methods acquired via inheritance get put into the same lookup path</li>
+<li>Use Template Method Pattern: Objects that use the module should supply the specialization behavior</li>
+<li>Use Hook Methods to avoid forcing includers to send super (objects that use the module should not have knowledge of the algorithm)</li>
+</ul>
+
+
 <p><strong>Follow Up Links:</strong></p>
 
 <ul>
+<li>If you&#8217;re learning Ruby, read it: <a href="http://www.amazon.com/Sandi-Metz/e/B0097WWH62">Practical Object-Oriented Design in Ruby</a></li>
 <li>In Chapter 2, Metz mentions the <a href="http://ruby-doc.org/core-1.9.3/Struct.html">Struct Ruby class</a> when discussing how to isolate responsibilities in a model when you&#8217;re not yet ready to separate a responsibility into an entirely new model. Structs are described as a solution for when you need a &#8220;lightweight object.&#8221;</li>
+<li>In Chapter 4, Metz mentions the Ruby <a href="http://apidock.com/rails/Module/delegate">delegate</a> <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/delegate/rdoc/Delegator.html">method</a>.</li>
+<li>When Avi started his lectures on Object Orientation, he showed us this <a href="http://www.confreaks.com/videos/240-goruco2009-solid-object-oriented-design">video of Sandi Metz&#8217;s awesome presentation</a> at the GuRoKu conference.</li>
 <li>While writing this post, I listened to this super awesome <a href="https://soundcloud.com/urban_stylz_blog/diplo-friends-ryan-hemsworth">mix by Ryan Hemsworth for Diplo &amp; Friends</a></li>
 </ul>
 
